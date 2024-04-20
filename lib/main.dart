@@ -28,9 +28,11 @@ class HomePage extends StatelessWidget {
       builder: (context, state) {
         if (state == InternetState.connected) {
           // Jika terhubung, tampilkan WebView
-          return WebView(
-            initialUrl: 'https://simtofly.co.id/',
-            javascriptMode: JavascriptMode.unrestricted,
+          return SafeArea(
+            child: WebView(
+              initialUrl: 'https://simtofly.co.id/',
+              javascriptMode: JavascriptMode.unrestricted,
+            ),
           );
         } else {
           // Jika tidak terhubung, tampilkan pesan peringatan
